@@ -13,15 +13,17 @@ Hubspot.configure(
     access_token: @access_token)
 @access_token = Hubspot::OAuth.create(params[:code])
 Hubspot::OAuth.authorize_url(["contacts", "tickets"])
-
+Hubspot::OAuth.refresh(refresh_token)
 
 Hubspot.configure(hapikey: "953be023-b5be-4f99-ac65-d9c2da581fb1")
 @a = Hubspot::Contact.find_by_email("frederic.curier@gmail.com")
 @d = Hubspot::Contact.all
 
-url_user =  'https://api.hubapi.com/extensions/sales-objects/v1/object-types?hapikey=f973fe7d-b24e-4ee2-aec6-40af9c6dbc2c'
-response = RestClient.post url_user,
-    {
+# url_user =  'https://api.hubapi.com/extensions/sales-objects/v1/object-types?hapikey=f973fe7d-b24e-4ee2-aec6-40af9c6dbc2c'
+# response = RestClient.post url_user,
+
+
+   @result = {
   "applicationId": 197936,
   "baseUris": [
     "https://oauthhubspot.herokuapp.com/"
@@ -70,6 +72,9 @@ response = RestClient.post url_user,
       "domain"
     ]
   }
-}.to_json, {content_type: :json, accept: :json}
+}
+render json: @result
+
+# .to_json, {content_type: :json, accept: :json}
 end
 end
