@@ -13,7 +13,7 @@ Hubspot.configure(
     access_token: @access_token)
 @access_token = Hubspot::OAuth.create(params[:code])
 Hubspot::OAuth.authorize_url(["contacts", "tickets"])
-Hubspot::OAuth.refresh(refresh_token)
+# Hubspot::OAuth.refresh(refresh_token)
 
 Hubspot.configure(hapikey: "953be023-b5be-4f99-ac65-d9c2da581fb1")
 @a = Hubspot::Contact.find_by_email("frederic.curier@gmail.com")
