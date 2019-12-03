@@ -217,6 +217,8 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
   # config.sign_in_after_reset_password = true
+# config.omniauth :hubspot, ENV['APP_ID'], ENV['HUBSPOT_SECRET'], :scope => 'contacts tickets'
+# Hubspot.configure(hapikey: "953be023-b5be-4f99-ac65-d9c2da581fb1")
 
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).

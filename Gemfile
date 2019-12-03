@@ -15,6 +15,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "hubspot-ruby"
+gem 'rest-client'#, '~> 1.8'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
