@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 Hubspot.configure(
     client_id: "56ee8576-5661-42f3-8281-db8d417d4f05",
     client_secret: "db4c4403-ea58-4e89-87ce-c6fc3a1c1a99",
-    redirect_uri: "https://omnicon.herokuapp.com/",
+    redirect_uri: "https://oauthhubspot.herokuapp.com/",
     access_token: @access_token)
 @access_token = Hubspot::OAuth.create(params[:code])
 Hubspot::OAuth.authorize_url(["contacts", "tickets"])
@@ -24,9 +24,9 @@ response = RestClient.post url_user,
     {
   "applicationId": 197936,
   "baseUris": [
-    "https://omnicon.herokuapp.com/"
+    "https://oauthhubspot.herokuapp.com/"
   ],
-  "dataFetchUri": "https://omnicon.herokuapp.com/",
+  "dataFetchUri": "https://oauthhubspot.herokuapp.com/",
   "title": "DemoTickets",
   "propertyDefinitions": [
     {
